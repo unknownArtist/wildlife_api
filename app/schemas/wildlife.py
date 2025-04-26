@@ -4,6 +4,7 @@ from datetime import date
 from decimal import Decimal
 
 class WildlifeBase(BaseModel):
+    id: int | None = None
     department: str
     conservation_name_english: str
     conservation_area: str
