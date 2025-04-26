@@ -27,9 +27,9 @@ A modular FastAPI application with SQLAlchemy, Alembic, and PostgreSQL, all cont
    cd wild_life_api
    ```
 
-2. Start the application with Docker Compose:
+2. To build and Start the application with Docker Compose:
    ```bash
-   docker-compose up -d
+   docker compose up -d --build 
    ```
 
 3. Create a migrations
