@@ -15,20 +15,6 @@ services:
       bash -c "alembic upgrade head && 
               uvicorn app.main:app --host 0.0.0.0 --port 3000 --reload"
 
-  # db:
-  #   image: gvenzl/oracle-free:latest
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - "1521:1521"
-  #   environment:
-  #     - ORACLE_PASSWORD=${ORACLE_PASSWORD}
-  #     - APP_USER=${APP_USER}
-  #     - APP_USER_PASSWORD=${APP_USER_PASSWORD}
-
-    # volumes:
-    #   - ./oracle_data:/opt/oracle/oradata
-
   adminer:
     image: adminer
     restart: always

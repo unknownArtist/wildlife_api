@@ -26,19 +26,19 @@ class Settings(BaseSettings):
     PROJECT_NAME: str
     
     # Oracle settings
-    ORACLE_HOST: str = "localhost"
-    ORACLE_PORT: int = 1521 # Default Oracle port
-    APP_USER: str # Application user from docker-compose
-    APP_USER_PASSWORD: str # Application user password from docker-compose
-    ORACLE_SERVICE_NAME: str = "FREEPDB1" # Default service for oracle-free
-    ORACLE_PASSWORD: str
+    # ORACLE_HOST: str = "localhost"
+    # ORACLE_PORT: int = 1521 # Default Oracle port
+    # APP_USER: str # Application user from docker-compose
+    # APP_USER_PASSWORD: str # Application user password from docker-compose
+    # ORACLE_SERVICE_NAME: str = "FREEPDB1" # Default service for oracle-free
+    # ORACLE_PASSWORD: str
 
     @computed_field
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> str:
         # Construct the Oracle connection string
         # Format: oracle+oracledb://user:password@host:port/?service_name=service_name
-        return "oracle+oracledb://SYSTEM:wildlife@localhost:1521/?service_name=FREEPDB1"
+        return "oracle+oracledb://system:wildlife@192.168.215.2:1521/?service_name=FREEPDB1"
 
 
 settings = Settings() 
